@@ -1,0 +1,10 @@
+<div class="content">
+    <form name="contactForm" novalidate ng-submit="login()">
+        <input type="text" placeholder="Usuario" name="user" ng-model="formData.user" ng-required="true">
+        <input type="password" name="pass" placeholder="Contraseña" ng-model="formData.pass" ng-required="true">
+
+        <input type="submit" value="Send" ng-disabled="contactForm.$invalid">
+    </form>
+</div>
+
+{{users}}

@@ -1,0 +1,44 @@
+<div class="content">
+    <div class="main">
+        <div style="postion:fixed">
+            <h1>Códigos pendientes</h1>
+            <!-- Botones para ordenar los códigos según criterio -->
+            <!-- Crear toggle para que los ordene de forma alfabética e inversamente -->
+            <button type="button" class="btn btn-primary btn-danger" ng-click="order='fecha'">Ordenar por fecha</button>
+            <button type="button" class="btn btn-primary btn-danger" ng-click="order='lenguaje'">Ordenar por
+                lenguaje</button>
+
+            <!-- Input para buscar una cadena entre los códigos -->
+            <input type="text" ng-model="search" placeholder="Buscar en los códigos"><br><hr>
+        </div>
+
+
+        <!-- Lista de códigos -->
+        <div id="ninja-list">
+        <h3 sytle="color: red">{{message}}</h3>
+            <!-- EDITAR LA FORMA EN QUE SE MUESTRA CADA CÓDIGO, SEPARACIÓN Y DIFERENCIACIÓN ENTRE ELLOS -->
+            <div ng-repeat="code in codes | orderBy: order | filter: search" ng-hide="code.disponible">
+                <span>{{ code.fecha }}</span>
+                <span style="padding-left: 20%">{{ code.titulo }} </span>- <span>{{code.lenguaje}}</span>
+                <div style="float:right;">
+                    <button type="button" class="btn btn-primary" ng-click="removeCode(code._id)" title="Eliminar"><span class=" glyphicon glyphicon-remove"></span></button>
+                    <button type="button" class="btn btn-primary" ng-click="addCode(code._id)" title="Aceptar"><span class="glyphicon glyphicon-ok"></span></button>
+
+                    <button type="button" class="btn btn-primary btn-warning" ng-show="code.show"
+                            ng-click="codeExpand(code)" title="Mostrar menos"><span class="glyphicon glyphicon-minus"></span></button>
+                    <button type="button" class="btn btn-primary btn-danger" ng-hide="code.show"
+                            ng-click="codeExpand(code)" title="Mostrar más"><span class="glyphicon glyphicon-plus"></span></button>
+                    
+                </div>
+                <br><br>
+                    <!-- Poner estilo de letra de consola y background negro (editor de código)-->
+                <div ng-show="code.show">
+                    <div ><pre class="code">{{code.descripcion}}</pre></div><br>
+                    <span>Link: <a href="{{code.link}}" target="_blank">{{code.link}}</a> </span>
+                    <!--<div class="remove" ng-click="removeCode(code)">x</div>-->
+                </div>
+                <hr style="border: 1px solid dark">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>WikiCode</title>
+    <link href="resources/css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/bootstrap-select.scss" />
+    <!-- Cargar librería bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <script src="https://code.angularjs.org/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="scripts/canvas.js"></script>
+  </head>
+  <body>
+     <header ng-include="'header.html'">
+         <!--<nav class="navbar navbar-toggleable-md bg-faded navbar-fixed-top">
+          <div id="menu-bar">
+            <a href="#/inicio">
+              <canvas id="myCanvas" width="200px" height="75px" ></canvas></a>
+
+            <ul class="nav navbar-nav">
+              <li><a href="#/codigos">Códigos</a></li>
+              <li><a href="#/login">Login</a> </li>
+              <li><a href="#/enviar-codigo">Añadir código</a></li>
+              <li><a href="#/administrar-codigos">Administrar códigos</a></li>
+            </ul>
+          </div>
+        </nav>-->
+     </header>
+
+
+
+    <article>
+      <!-- Main donde se cargan las vistas -->
+      <div class="container ">
+        <main ng-view> </main>
+      </div>
+    </article>
+
+
+    <hr>
+    <footer class="container-fluid text-center">
+      <p>WikiCode</p>
+    </footer>
+
+
+    <!-- Controllers for the views -->
+    <script src="js/controllers/CodeController.js"></script>
+    <script src="js/controllers/LoginController.js"></script>
+    <script src="js/controllers/addCodeController.js"></script>
+    <script src="js/controllers/headerController.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<div class="content">
+
+
+
+    <p><h1>Enviar código</h1></p>
+    <h2 class="text-center">{{message}}</h2>
+    <hr>
+    <form ng-submit="addCode()">
+        <input type="text" placeholder="Título" ng-model="formData.titulo"><br>
+        <input type="text" placeholder="Link" ng-model="formData.link"><br>
+        <textarea rows="15" ng-model="formData.descripcion" placeholder="Código"></textarea><br>
+        <select ng-model="formData.lenguaje">
+            <option value="JavaScript" selected="selected">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value="SQL">SQL</option>
+            <option value="Java">Java</option>
+        </select>
+        <input type="submit" value="Añadir código">
+    </form>
+
+
+    <!-- Poner esta función en el lado del administrador, para que pueda eliminar todos los códigos que no están
+    disponibles. Cambiar también la función para que sólo elimine de la base de datos las filas en que disponible = false
+
+    <a href="" ng-click="removeAll()">Eliminar todos los códigos</a>  -->
+
+</div>
