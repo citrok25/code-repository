@@ -24,15 +24,6 @@ app.use(bodyParser.json())
 app.use(methodOverride())
 
 var router = express.Router()
-/*
-router.get('/', function(req, res) {  
-   res.send("Hello World!")
-});
-====================================
-app.get('/', (req,res) => {
-    res.send({ message: 'Hello World!'})
-})
-*/
 
 // Configuración de la ruta de la aplicación (html, css, angular, javascript)
 app.use(express.static(__dirname + '/public'));
